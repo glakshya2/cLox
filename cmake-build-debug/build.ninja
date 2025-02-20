@@ -85,6 +85,18 @@ build CMakeFiles/cLox.dir/vm.c.obj: C_COMPILER__cLox_unscanned_Debug C$:/Users/g
   OBJECT_DIR = CMakeFiles\cLox.dir
   OBJECT_FILE_DIR = CMakeFiles\cLox.dir
 
+build CMakeFiles/cLox.dir/compiler.c.obj: C_COMPILER__cLox_unscanned_Debug C$:/Users/glaks/Documents/repos/cLox/compiler.c || cmake_object_order_depends_target_cLox
+  DEP_FILE = CMakeFiles\cLox.dir\compiler.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\cLox.dir
+  OBJECT_FILE_DIR = CMakeFiles\cLox.dir
+
+build CMakeFiles/cLox.dir/scanner.c.obj: C_COMPILER__cLox_unscanned_Debug C$:/Users/glaks/Documents/repos/cLox/scanner.c || cmake_object_order_depends_target_cLox
+  DEP_FILE = CMakeFiles\cLox.dir\scanner.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\cLox.dir
+  OBJECT_FILE_DIR = CMakeFiles\cLox.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target cLox
@@ -93,7 +105,7 @@ build CMakeFiles/cLox.dir/vm.c.obj: C_COMPILER__cLox_unscanned_Debug C$:/Users/g
 #############################################
 # Link the executable cLox.exe
 
-build cLox.exe: C_EXECUTABLE_LINKER__cLox_Debug CMakeFiles/cLox.dir/main.c.obj CMakeFiles/cLox.dir/chunk.c.obj CMakeFiles/cLox.dir/memory.c.obj CMakeFiles/cLox.dir/debug.c.obj CMakeFiles/cLox.dir/value.c.obj CMakeFiles/cLox.dir/vm.c.obj
+build cLox.exe: C_EXECUTABLE_LINKER__cLox_Debug CMakeFiles/cLox.dir/main.c.obj CMakeFiles/cLox.dir/chunk.c.obj CMakeFiles/cLox.dir/memory.c.obj CMakeFiles/cLox.dir/debug.c.obj CMakeFiles/cLox.dir/value.c.obj CMakeFiles/cLox.dir/vm.c.obj CMakeFiles/cLox.dir/compiler.c.obj CMakeFiles/cLox.dir/scanner.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\cLox.dir
