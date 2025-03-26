@@ -6,3 +6,12 @@
 35	149	7608248374618649	CMakeFiles/cLox.dir/value.c.obj	c806c9f6b1ca071f
 28	135	7608248374548651	CMakeFiles/cLox.dir/memory.c.obj	d69dc731e9b08473
 33	127	7609734236443316	CMakeFiles/cLox.dir/vm.c.obj	b3cbea2490286d50
+59	1078	7647025234207566	CMakeFiles/cLox.dir/memory.c.obj	d69dc731e9b08473
+56	1086	7647025234176792	CMakeFiles/cLox.dir/chunk.c.obj	a8e9c84661cfeb70
+65	1088	7647025234278713	CMakeFiles/cLox.dir/value.c.obj	c806c9f6b1ca071f
+62	1089	7647025234248693	CMakeFiles/cLox.dir/debug.c.obj	4767917a30eb0e8d
+48	1091	7647025234106042	CMakeFiles/cLox.dir/main.c.obj	14fdb2502508a446
+23	120	7647025670947653	CMakeFiles/cLox.dir/scanner.c.obj	32cde38ce3cede25
+17	121	7647025670885886	CMakeFiles/cLox.dir/vm.c.obj	b3cbea2490286d50
+3	101	7647027275938194	CMakeFiles/cLox.dir/compiler.c.obj	7799744e99eb72e2
+102	439	7647027276925161	cLox.exe	b81ff1c4c159b10a
