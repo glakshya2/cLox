@@ -20,4 +20,6 @@ add_executable(cLox main.c
         scanner.h
         scanner.c
         object.h
-        object.c)
+        object.c
+        table.h
+        table.c)

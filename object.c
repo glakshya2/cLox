@@ -4,6 +4,7 @@
 
 
 #include "object.h"
+#include "table.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -23,22 +24,43 @@ static struct Obj* allocateObject(size_t size, ObjType type) {
     return object;
 }
 
-static ObjStirng* allocateString(char* chars, int length) {
+static ObjStirng* allocateString(char* chars, int length, uint32_t hash) {
     struct ObjString* string = ALLOCATE_OBJ(struct ObjString, OBJ_STRING);
     string->length = length;
     string->chars = chars;
+    string->hash = hash;
+    tableSet(&vm.strings, string, NIL_VAL);
     return string;
 }
 
+static uint32_t hashString(const char* key, int length) {
+    uint32_t hash = 2166136261u;
+    for (int i = 0; i < length; i++) {
+        hash ^= (uint8_t)key[i];
+        hash *= 16777619;
+    }
+    return hash;
+}
 struct ObjString* takeString(char* chars, int length) {
-    return allocateString(chars, length);
+    uint32_t hash = hashString(chars, length);
+    struct ObjString* interned = tableFindString(&vm.strings, chars, length, hash);
+
+    if (interned != NULL) {
+        FREE_ARRAY(char, chars, length + 1);
+        return interned;
+    }
+    return allocateString(chars, length, hashString(chars, length));
 }
 
 ObjStirng* copyString(const char* chars, int length) {
+    uint32_t hash = hashString(chars, length);
+    struct ObjString* interned = tableFindString(&vm.strings, chars, length, hash);
+    if (interned != NULL) return interned;
+
     char* heapChars = ALLOCATE(char, length + 1);
     memcpy(heapChars, chars, length);
     heapChars[length] = '\0';
-    return allocateString(heapChars, length);
+    return allocateString(heapChars, length, hash);
 }
 
 void printObject(Value value) {
